@@ -1,9 +1,9 @@
 import React from 'react';
 import './archiveContainer.css';
 import image1 from '../assets/aemporter.jpg';
-import image2 from '../assets/brocoli.jpg';
+import image2 from '../assets/rudimentaire.jpg';
 import image3 from '../assets/l2f.jpg';
-import image4 from '../assets/rudimentaire.jpg';
+import image4 from '../assets/brocoli.jpg';
 import image5 from '../assets/tpplt.jpg';
 
 const images = [
@@ -23,7 +23,9 @@ const ImageComponent = () => {
             <div className='figures'>
                 {images.map((image, index) => (
                     <a key={index} href={image.link}>
-                        <img src={image.src} alt={`Image ${index}`} />
+                        <a href={image.link} target="_blank" rel="noopener noreferrer">
+                            <img src={image.src} alt={`Image ${index}`} />
+                        </a>
                     </a>
                 ))}
             </div>

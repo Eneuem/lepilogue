@@ -1,10 +1,11 @@
 import React from 'react';
-import './footer.css'; // Assurez-vous de créer ce fichier CSS
+import './footer.css'; 
+import logo from '../assets/NEM.png';
 
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>&copy; {new Date().getFullYear()} Eneuem. Tous droits réservés.</p>
+            <p>&copy; <img src={logo} width="50" height="0.5em"/> {new Date().getFullYear()} . Tous droits réservés.</p>
         </footer>
     );
 }
