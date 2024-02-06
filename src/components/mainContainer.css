@@ -118,6 +118,17 @@ hr {
 }
     /* CONTAINERS */
 
+.main_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-self: center;
+    padding: 20px;
+    margin-left: 5%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+}
 @media screen and (min-width: 1200px){
     .main_container {
         display: flex;
@@ -141,10 +152,6 @@ hr {
     }
     
 }
-
-    /* CONTAINERS */
-
-    /* TEXT */
 
 .text_container {
     display: flex;

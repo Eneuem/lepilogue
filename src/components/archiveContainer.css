@@ -1,0 +1,26 @@
+.figures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.figures img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1200px){
+    .figures{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+    /* .figures img {
+        max-width: 20%;
+    }     */
+    
+}
