@@ -15,7 +15,6 @@ const images = [
 ];
 
 const ImageComponent = () => {
-
     const [hoverIndex, setHoverIndex] = useState(null);
     return (
         <div className='archive_container'>
@@ -25,27 +24,15 @@ const ImageComponent = () => {
             <div className='figures'>
                 {images.map((image, index) => (
                     <div
+                        className='figure'
                         key={index}
                         onMouseEnter={() => setHoverIndex(index)}
                         onMouseLeave={() => setHoverIndex(null)}
-                        style={{ position: 'relative' }}
                     >
                         <img src={image.src} alt={`Image ${index}`} />
                         {hoverIndex === index && (
-                            <div className="overlay" style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '100%',
-                                width: '100%',
-                                height: '20%',
-                                backgroundColor: 'rgba(0,0,0,0.5)',
-                                color: '#fff',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                transform: 'translate(-100%, -50%)',
-                            }}>
-                                <a href={image.link} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textAlign: 'center' }}>
+                            <div className="overlay">
+                                <a href={image.link} target="_blank" rel="noopener noreferrer">
                                     <p>{image.title}</p>
                                 </a>
                             </div>
