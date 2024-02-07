@@ -1,3 +1,12 @@
+.archive_container {
+    margin-top: 3%;
+    background-color: rgba(245, 245, 220, 0.35);
+    padding: 20px;
+    margin-right: 5%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
 .figures {
     display: flex;
     flex-direction: column;

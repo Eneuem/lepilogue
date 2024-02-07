@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './archiveContainer.css';
 import image1 from '../assets/aemporter.jpg';
 import image2 from '../assets/rudimentaire.jpg';
@@ -7,26 +7,50 @@ import image4 from '../assets/brocoli.jpg';
 import image5 from '../assets/tpplt.jpg';
 
 const images = [
-    { src: image1, link: 'https://example.com/image1' },
-    { src: image2, link: 'https://example.com/image2' },
-    { src: image3, link: 'https://example.com/image3' },
-    { src: image4, link: 'https://example.com/image4' },
-    { src: image5, link: 'https://example.com/image5' },
+    { src: image1, link: 'https://example.com/image1', title: 'A emporter (2012)'},
+    { src: image2, link: 'https://example.com/image2', title: 'Rudimentaire (2014)'},
+    { src: image3, link: 'https://example.com/image3', title: 'Lignes 2 Fuite (2014)'},
+    { src: image4, link: 'https://example.com/image4', title: 'EP JCR (2016)'},
+    { src: image5, link: 'https://example.com/image5', title: 'TPPLT (2021)'},
 ];
 
 const ImageComponent = () => {
+
+    const [hoverIndex, setHoverIndex] = useState(null);
     return (
-        <div className=''>
-            <div className=''>
+        <div className='archive_container'>
+            <div>
                 <h2>Archives</h2>
             </div>
             <div className='figures'>
                 {images.map((image, index) => (
-                    <a key={index} href={image.link}>
-                        <a href={image.link} target="_blank" rel="noopener noreferrer">
-                            <img src={image.src} alt={`Image ${index}`} />
-                        </a>
-                    </a>
+                    <div
+                        key={index}
+                        onMouseEnter={() => setHoverIndex(index)}
+                        onMouseLeave={() => setHoverIndex(null)}
+                        style={{ position: 'relative' }}
+                    >
+                        <img src={image.src} alt={`Image ${index}`} />
+                        {hoverIndex === index && (
+                            <div className="overlay" style={{
+                                position: 'absolute',
+                                top: '50%',
+                                left: '100%',
+                                width: '100%',
+                                height: '20%',
+                                backgroundColor: 'rgba(0,0,0,0.5)',
+                                color: '#fff',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                transform: 'translate(-100%, -50%)',
+                            }}>
+                                <a href={image.link} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textAlign: 'center' }}>
+                                    <p>{image.title}</p>
+                                </a>
+                            </div>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
