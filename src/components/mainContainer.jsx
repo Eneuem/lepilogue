@@ -6,7 +6,7 @@ const MainContainer = () => {
     return (
         <div className="main_container">
             <div>
-                <img src={pochetteImage} width="500" height="500" alt="Placeholder: 500x500"/>
+                <img src={pochetteImage} width="600" height="600" alt="Placeholder: 500x500"/>
             </div>
             <div className="text_container">
                 <h2>Un dernier projet pour la route :<span> "L'épilogue"</span></h2>
